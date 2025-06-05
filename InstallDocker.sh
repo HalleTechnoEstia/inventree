@@ -1,6 +1,13 @@
+# Install Docker
+# Authors: Maxime, Renaud, Olivier and AI :-)
+# Date : 2025-06-04
+
 # Uninstall components
 #for pkg in docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
 #sudo apt autoremove
+
+# Define user
+USER_NAME="ht"
 
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -21,4 +28,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 # Add user to Docker "group"
 # Must relog to activate
-sudo usermod -aG docker user
+# sudo usermod -aG docker user
+sudo usermod -aG docker "$USER_NAME"
+
